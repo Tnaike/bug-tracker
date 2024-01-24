@@ -1,113 +1,199 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import Link from 'next/link';
+import Marquee from 'react-fast-marquee';
+import NavBar from '@/shared/components/Narbar';
+import Footer from '@/shared/components/Footer';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <NavBar>
+        <div className='flex items-center gap-10'>
+          <nav>
+            <ul className='flex gap-6 font-medium'>
+              <li className='hover:text-blue-300'>
+                <Link href='/'>Features</Link>
+              </li>
+              <li className='hover:text-blue-300'>
+                <Link href='/'>Support</Link>
+              </li>
+              <li className='hover:text-blue-300'>
+                <Link href='/'>Pricing</Link>
+              </li>
+              <li className='hover:text-blue-300'>
+                <Link href='/'>Docs</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <div className='flex gap-3'>
+            <Link href='/' className=''>
+              Login
+            </Link>
+
+            <Link href='/' className=''>
+              Sign up
+            </Link>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      </NavBar>
+      <main className='relative scroll-smooth bg-white'>
+        <section className='pt-12 pb-12 px-4 md:px-0 bg-[#f9f9f9]'>
+          <div className='container md:container px-4 md:px-8 mx-auto'>
+            <div className='grid grid-cols-1 md:gap-8 md:grid-cols-2'>
+              <div className='flex items-top row-start-2 md:row-start-1'>
+                <div>
+                  <h1 className='flex flex-col text-xl md:text-xxl mt-5 font-bolder text-gray-500'>
+                    Streamline Issue Tracking with BugTracker
+                  </h1>
+                  <div className='font-display text-sm md:text-base lg:text-md'>
+                    <p className='my-4'>
+                      A simple, fast and scalable bug tracking system that helps
+                      you manage, track and resolve issues efficiently,
+                      delivering great products on time.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className='flex w-full items-center justify-center'>
+                <Image
+                  className='w-full'
+                  src='/images/landing-bg.svg'
+                  alt='Bug Tracker App'
+                  width={1000}
+                  height={982}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className='py-6 px-4 md:py-8 md:px-0 md:my-4'>
+          <div className='container md:container mx-auto'>
+            <h2 className='font-display text-base font-medium mt-6 md:mt-0 xl:text-lg mb-8 text-center text-gray-400/80'>
+              Thousands of businesses scale faster and more efficiently by
+              building on BugTracker.
+            </h2>
+            <div className='relative flex w-full items-center justify-start overflow-x-clip'>
+              <Marquee autoFill>
+                <div className='flex w-full justify-center'>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                    <Image
+                      src='/aws_logo.svg'
+                      width={77}
+                      height={35}
+                      alt='Amazon Web Services'
+                    />
+                  </div>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                    <Image
+                      src='/next.svg'
+                      width={77}
+                      height={35}
+                      alt='Nextjs'
+                    />
+                  </div>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                    <Image
+                      src='/Tubi_logo_1.svg'
+                      width={77}
+                      height={35}
+                      alt='AWS'
+                    />
+                  </div>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                    <Image
+                      src='/ByteDance_logo.svg'
+                      width={77}
+                      height={35}
+                      alt='ByteDance'
+                    />
+                  </div>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                    <Image
+                      src='/GSK_logo.svg'
+                      width={77}
+                      height={35}
+                      alt='GSK'
+                    />
+                  </div>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                    <Image
+                      src='/vercel.svg'
+                      width={77}
+                      height={35}
+                      alt='Vercel'
+                    />
+                  </div>
+                </div>
+              </Marquee>
+              <div className='absolute left-0 top-0 h-full w-full bg-gradient-to-r from-slate-50 to-5%'></div>
+              <div className='absolute right-0 top-0 h-full w-full bg-gradient-to-l from-slate-50 to-5%'></div>
+            </div>
+          </div>
+        </section>
+        <section className='py-6 px-4 md:py-8 md:px-0'>
+          <div className='container md:container mx-auto'>
+            <h2 className='text-md font-bold mt-10 md:mt-0 md:text-xl mb-10 text-center text-gray-400/80'>
+              Why BugTracker for issue tracker app?
+            </h2>
+            <div className='flex flex-col gap-4 lg:gap-8 sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:space-y-0'>
+              <div className='overflow-hidden flex flex-col p-6 sm:py-8 rounded-2xl bg-[#e2f8e2] hover:bg-gray-100'>
+                <h2 className='font-display text-md md:text-xl font-bold mb-4 text-gray-400'>
+                  Customizable Tracker
+                </h2>
+                <div>
+                  <p className='font-display text-sm md:text-base mb-2'>
+                    With BugTracker, you can build a custom issue tracker app
+                    that perfectly fits your tem&apos;s workflow. Use
+                    drag-and-drop widgets to add features like issue logging,
+                    tracking, and resolution without writing a single line of
+                    code.
+                  </p>
+                </div>
+              </div>
+              <div className='overflow-hidden flex flex-col p-6 sm:py-8 rounded-2xl bg-[#fce8e0] hover:bg-gray-100'>
+                <h2 className='font-display text-md md:text-xl leading-normal font-bold mb-4 text-gray-400'>
+                  Seamless Integration
+                </h2>
+                <div>
+                  <p className='font-display text-sm md:text-base mb-2'>
+                    BugTracker allows you to integrate your issue tracker app
+                    with your existing databases or third-party APIs. Fetch and
+                    update issue data in real-time, ensuring your team always
+                    has the most accurate and up-to-date information.
+                  </p>
+                </div>
+              </div>
+              <div className='overflow-hidden flex flex-col p-6 sm:py-8 rounded-2xl bg-[#c7d8ff] hover:bg-gray-100'>
+                <h2 className='font-display text-md md:text-xl font-bold mb-4 text-gray-400'>
+                  User-friendly Interface
+                </h2>
+                <div>
+                  <p className='font-display text-sm md:text-base mb-2'>
+                    BugTracker&apos;s user-friendly interface makes it easy for
+                    anyone to build an issue tracker app. Its pre-built widgets
+                    and intuitive design tools eliminate the need for extensive
+                    coding skills, making app development accessible to all team
+                    members.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className='py-8 px-4 md:py-16 md:px-0 mt-8 md:mt-14 bg-blue-950'>
+          <div className='container md:container mx-auto'>
+            <div className='flex flex-col gap-6 md:gap-12 sm:grid sm:grid-cols-2 items-center sm:gap-8 md:space-y-0'>
+              <h2 className='font-display text-md md:text-xxl font-bold mb-4 text-white'>
+                Tackle bugs before <br /> they see it coming!
+              </h2>
+              <div>Sign Up For Free</div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer/>
+    </>
+  );
 }
