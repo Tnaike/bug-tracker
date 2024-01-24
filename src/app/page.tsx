@@ -67,7 +67,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className='py-6 px-4 md:py-8 md:px-0'>
+        <section className='py-6 px-4 md:py-8 md:px-0 md:my-4'>
           <div className='container md:container mx-auto'>
             <h2 className='font-display text-base font-medium mt-6 md:mt-0 xl:text-lg mb-8 text-center text-gray-400/80'>
               Thousands of businesses scale faster and more efficiently by
@@ -133,10 +133,62 @@ export default function Home() {
         </section>
         <section className='py-6 px-4 md:py-8 md:px-0'>
           <div className='container md:container mx-auto'>
-            <h2 className='text-base font-bold mt-6 md:mt-0 xl:text-lg mb-8 text-center text-gray-400/80'>
-              Why Appsmith for issue tracker app?
+            <h2 className='text-md font-bold mt-10 md:mt-0 md:text-xl mb-10 text-center text-gray-400/80'>
+              Why BugTracker for issue tracker app?
             </h2>
-            <div className='relative flex w-full items-center justify-start overflow-x-clip'></div>
+            <div className='flex flex-col gap-4 lg:gap-8 sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:space-y-0'>
+              <div className='overflow-hidden flex flex-col p-6 sm:py-8 rounded-2xl bg-[#e2f8e2] hover:bg-gray-100'>
+                <h2 className='font-display text-md md:text-xl font-bold mb-4 text-gray-400'>
+                  Customizable Tracker
+                </h2>
+                <div>
+                  <p className='font-display text-sm md:text-base mb-2'>
+                    With BugTracker, you can build a custom issue tracker app
+                    that perfectly fits your tem&apos;s workflow. Use
+                    drag-and-drop widgets to add features like issue logging,
+                    tracking, and resolution without writing a single line of
+                    code.
+                  </p>
+                </div>
+              </div>
+              <div className='overflow-hidden flex flex-col p-6 sm:py-8 rounded-2xl bg-[#fce8e0] hover:bg-gray-100'>
+                <h2 className='font-display text-md md:text-xl leading-normal font-bold mb-4 text-gray-400'>
+                  Seamless Integration
+                </h2>
+                <div>
+                  <p className='font-display text-sm md:text-base mb-2'>
+                    BugTracker allows you to integrate your issue tracker app
+                    with your existing databases or third-party APIs. Fetch and
+                    update issue data in real-time, ensuring your team always
+                    has the most accurate and up-to-date information.
+                  </p>
+                </div>
+              </div>
+              <div className='overflow-hidden flex flex-col p-6 sm:py-8 rounded-2xl bg-[#c7d8ff] hover:bg-gray-100'>
+                <h2 className='font-display text-md md:text-xl font-bold mb-4 text-gray-400'>
+                  User-friendly Interface
+                </h2>
+                <div>
+                  <p className='font-display text-sm md:text-base mb-2'>
+                    BugTracker&apos;s user-friendly interface makes it easy for
+                    anyone to build an issue tracker app. Its pre-built widgets
+                    and intuitive design tools eliminate the need for extensive
+                    coding skills, making app development accessible to all team
+                    members.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className='py-8 px-4 md:py-16 md:px-0 mt-8 md:mt-14 bg-blue-950'>
+          <div className='container md:container mx-auto'>
+            <div className='flex flex-col gap-6 md:gap-12 sm:grid sm:grid-cols-2 items-center sm:gap-8 md:space-y-0'>
+              <h2 className='font-display text-md md:text-xxl font-bold mb-4 text-white'>
+                Tackle bugs before <br /> they see it coming!
+              </h2>
+              <div>Sign Up For Free</div>
+            </div>
           </div>
         </section>
       </main>
