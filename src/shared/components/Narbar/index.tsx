@@ -7,8 +7,8 @@ type NavBarProps = {
 
 const NavBar = ({ children }: NavBarProps) => {
   return (
-    <header className='fixed z-30 w-full bg-transparent'>
-      <div className='flex h-16 w-full justify-between align-middle sm:px-2 md:px-36'>
+    <header className='sticky top-0 z-30 w-full bg-white'>
+      <div className='flex container md:container h-16 w-full justify-between align-middle sm:px-2 md:px-8 mx-auto'>
         <div className='flex items-center'>
           <Link href='/'>
             <Image

@@ -1,8 +1,8 @@
 import './globals.css';
-import { PT_Sans } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 
-const ptSans = PT_Sans({
-  weight: ['400', '700'],
+const montserrat = Montserrat({
+  weight: ['400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
   display: 'swap',
 });
@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={ptSans.className}>
-      <body>{children}</body>
+    <html lang='en'>
+      <body className={montserrat.className}>{children}</body>
     </html>
   );
 }

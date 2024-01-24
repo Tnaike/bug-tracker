@@ -8,8 +8,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        screens: {
+          sm: '640px', // default min-width for small screens
+          md: '768px', // default min-width for medium screens
+          lg: '1024px', // default min-width for large screens
+          xl: '1128px', // default min-width for extra-large screens
+          '2xl': '1280px', // default min-width for 2xl screens
+        },
+        padding: {
+          default: '1.25rem', // default padding for all screens
+          sm: '2rem', // padding for small screens
+        },
+      },
       fontFamily: {
-        sans: ['"PT Sans"', 'sans-serif'],
+        sans: ['"Montserrat"', 'sans-serif'],
+        display: ['"PT Sans"', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -21,6 +35,7 @@ module.exports = {
         white: '#ffffff',
         black: '#000000',
         gray: {
+          500: '#190f36',
           400: '#000812',
           300: '#CBD6E0',
           200: '#E2E9F0',
@@ -46,11 +61,15 @@ module.exports = {
         md: ['1.25rem', '1.75rem'],
         lg: ['1.5rem', '2rem'],
         xl: ['2rem', '3rem'],
-        xxl: ['3rem', '4rem'],
+        xxl: ['4rem', '5rem'],
       },
       fontWeight: {
+        light: 300,
         normal: 400,
+        medium: 500,
+        semibold: 600,
         bold: 700,
+        bolder: 800,
       },
     },
   },
