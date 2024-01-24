@@ -1,7 +1,8 @@
-import NavBar from '@/shared/components/Narbar';
 import Image from 'next/image';
 import Link from 'next/link';
 import Marquee from 'react-fast-marquee';
+import NavBar from '@/shared/components/Narbar';
+import Footer from '@/shared/components/Footer';
 
 export default function Home() {
   return (
@@ -10,16 +11,16 @@ export default function Home() {
         <div className='flex items-center gap-10'>
           <nav>
             <ul className='flex gap-6 font-medium'>
-              <li>
+              <li className='hover:text-blue-300'>
                 <Link href='/'>Features</Link>
               </li>
-              <li>
+              <li className='hover:text-blue-300'>
                 <Link href='/'>Support</Link>
               </li>
-              <li>
+              <li className='hover:text-blue-300'>
                 <Link href='/'>Pricing</Link>
               </li>
-              <li>
+              <li className='hover:text-blue-300'>
                 <Link href='/'>Docs</Link>
               </li>
             </ul>
@@ -192,6 +193,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer/>
     </>
   );
 }
