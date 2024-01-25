@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Marquee from 'react-fast-marquee';
 import NavBar from '@/shared/components/Narbar';
 import Footer from '@/shared/components/Footer';
+import Button from '@/shared/components/Button';
 
 export default function Home() {
   return (
@@ -26,14 +27,9 @@ export default function Home() {
             </ul>
           </nav>
 
-          <div className='flex gap-2 space-x-4'>
-            <Link href='/' className='button'>
-              Login
-            </Link>
-
-            <Link href='/' className=''>
-              Sign up
-            </Link>
+          <div className='flex items-center gap-2 space-x-4'>
+            <Button href='/login' label='Login' variant='info' size='small' />
+            <Button href='/signUp' label='Sign up' size='small' />
           </div>
         </div>
       </NavBar>
@@ -46,12 +42,20 @@ export default function Home() {
                   <h1 className='flex flex-col text-xl md:text-xxl mt-5 font-bolder text-gray-500'>
                     Streamline Issue Tracking with BugTracker
                   </h1>
-                  <div className='font-display text-sm md:text-base lg:text-md'>
+                  <div className='flex font-display text-sm md:text-base lg:text-md mb-4'>
                     <p className='my-4'>
                       A simple, fast and scalable bug tracking system that helps
                       you manage, track and resolve issues efficiently,
                       delivering great products on time.
                     </p>
+                  </div>
+                  <div className='flex mt-8 uppercase'>
+                    <Button
+                      href='/signUp'
+                      label='Sign Up for free'
+                      variant='primary'
+                      size='medium'
+                    />
                   </div>
                 </div>
               </div>

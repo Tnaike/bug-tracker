@@ -1,17 +1,27 @@
+'use client';
+
 import React from 'react';
-import Image from 'next/image';
 import './Button.css';
+import Link from 'next/link';
 
 interface ButtonProps {
   label?: string;
   type?: 'button' | 'submit' | 'reset';
-  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'transparent';
   size?: 'default' | 'small' | 'medium' | 'large';
-  fullWidth?: boolean;
+  height?: string;
   disabled?: boolean;
   isLoading?: boolean;
   svgIcon?: React.ReactElement;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  href?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,30 +29,34 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   variant = 'primary',
   size = 'default',
-  fullWidth = true,
+  height = 'fit',
   disabled = false,
   isLoading = false,
   svgIcon,
   onClick = () => {},
+  href,
 }) => {
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className={`button btn-${variant} btn-${size} h-${height}`}
+      >
+        {label}
+      </Link>
+    );
+  }
+
   return (
     <button
       type={type}
       disabled={disabled || isLoading}
       onClick={onClick}
-      className={`button btn-${variant} btn-${size} ${fullWidth && 'w-full'}`}
+      className={`button btn-${variant} btn-${size} h-${height}`}
     >
-      <span>{svgIcon}</span>
-      <span>{label}</span>
-      {isLoading && (
-        <Image
-          width={156}
-          height={156}
-          alt='spinner'
-          src='/images/spinner.svg'
-          className='object-fit'
-        />
-      )}
+      {svgIcon && <span>{svgIcon}</span>}
+      {label}
+      {isLoading && disabled}
     </button>
   );
 };
