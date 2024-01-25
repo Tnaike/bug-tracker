@@ -49,8 +49,15 @@ module.exports = {
           100: '#b1d0fb',
           50: '#f4f9ff',
         },
+        green: {
+          500: '#02361D',
+          400: '#046235',
+          300: '#93ECC1',
+          200: '#94B6A3',
+          100: '#D3FDE9',
+          50: '#E2FEF0',
+        },
         disabled: '#F7F7F8',
-        green: '#94B6A3',
         error: '#D92D20',
       },
       fontSize: {
