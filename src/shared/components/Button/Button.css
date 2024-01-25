@@ -7,7 +7,7 @@
 
 .btn-primary,
 .button.btn-primary {
-  @apply bg-blue-300 hover:bg-blue-50 text-white justify-center hover:text-blue-300 border hover:border-blue-300;
+  @apply bg-blue-300 hover:bg-blue-50 text-white justify-center hover:text-blue-300 border border-transparent hover:border-blue-300;
 }
 
 .btn-secondary,

@@ -29,7 +29,7 @@ export default function Home() {
 
           <div className='flex items-center gap-2 space-x-4'>
             <Button href='/login' label='Login' variant='info' size='small' />
-            <Button href='/signUp' label='Sign up' size='small' />
+            <Button href='/signup' label='Sign up' size='small' />
           </div>
         </div>
       </NavBar>
@@ -189,10 +189,17 @@ export default function Home() {
         <section className='py-8 px-4 md:py-16 md:px-0 mt-8 md:mt-14 bg-[#0b1229]'>
           <div className='container md:container mx-auto'>
             <div className='flex flex-col gap-6 md:gap-12 sm:grid sm:grid-cols-2 items-center sm:gap-8 md:space-y-0'>
-              <h2 className='font-display text-md md:text-xxl font-bold mb-4 text-white'>
+              <h2 className='font-display text-md md:text-xxl font-bold mb-1 text-white'>
                 Tackle bugs before <br /> they see it coming!
               </h2>
-              <div>Sign Up For Free</div>
+              <div className='flex uppercase justify-center'>
+                <Button
+                  href='/signup'
+                  label='Sign Up for free'
+                  variant='primary'
+                  size='medium'
+                />
+              </div>
             </div>
           </div>
         </section>
