@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Marquee from 'react-fast-marquee';
 import NavBar from '@/shared/components/Narbar';
 import Footer from '@/shared/components/Footer';
+import Button from '@/shared/components/Button';
 
 export default function Home() {
   return (
@@ -26,14 +27,9 @@ export default function Home() {
             </ul>
           </nav>
 
-          <div className='flex gap-3'>
-            <Link href='/' className=''>
-              Login
-            </Link>
-
-            <Link href='/' className=''>
-              Sign up
-            </Link>
+          <div className='flex items-center gap-2 space-x-4'>
+            <Button href='/login' label='Login' variant='info' size='small' />
+            <Button href='/signup' label='Sign up' size='small' />
           </div>
         </div>
       </NavBar>
@@ -46,12 +42,20 @@ export default function Home() {
                   <h1 className='flex flex-col text-xl md:text-xxl mt-5 font-bolder text-gray-500'>
                     Streamline Issue Tracking with BugTracker
                   </h1>
-                  <div className='font-display text-sm md:text-base lg:text-md'>
+                  <div className='flex font-display text-sm md:text-base lg:text-md mb-4'>
                     <p className='my-4'>
                       A simple, fast and scalable bug tracking system that helps
                       you manage, track and resolve issues efficiently,
                       delivering great products on time.
                     </p>
+                  </div>
+                  <div className='flex mt-8 uppercase'>
+                    <Button
+                      href='/signUp'
+                      label='Sign Up for free'
+                      variant='primary'
+                      size='medium'
+                    />
                   </div>
                 </div>
               </div>
@@ -137,7 +141,7 @@ export default function Home() {
             <h2 className='text-md font-bold mt-10 md:mt-0 md:text-xl mb-10 text-center text-gray-400/80'>
               Why BugTracker for issue tracker app?
             </h2>
-            <div className='flex flex-col gap-4 lg:gap-8 sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:space-y-0'>
+            <div className='flex flex-col gap-4 lg:gap-8 sm:grid sm:grid-cols-1 sm:gap-8 lg:grid-cols-3 lg:space-y-0'>
               <div className='overflow-hidden flex flex-col p-6 sm:py-8 rounded-2xl bg-[#e2f8e2] hover:bg-gray-100'>
                 <h2 className='font-display text-md md:text-xl font-bold mb-4 text-gray-400'>
                   Customizable Tracker
@@ -182,18 +186,25 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className='py-8 px-4 md:py-16 md:px-0 mt-8 md:mt-14 bg-blue-950'>
+        <section className='py-8 px-4 md:py-16 md:px-0 mt-8 md:mt-14 bg-[#0b1229]'>
           <div className='container md:container mx-auto'>
             <div className='flex flex-col gap-6 md:gap-12 sm:grid sm:grid-cols-2 items-center sm:gap-8 md:space-y-0'>
-              <h2 className='font-display text-md md:text-xxl font-bold mb-4 text-white'>
+              <h2 className='font-display text-md md:text-xxl font-bold mb-1 text-white'>
                 Tackle bugs before <br /> they see it coming!
               </h2>
-              <div>Sign Up For Free</div>
+              <div className='flex uppercase justify-center'>
+                <Button
+                  href='/signup'
+                  label='Sign Up for free'
+                  variant='primary'
+                  size='medium'
+                />
+              </div>
             </div>
           </div>
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
