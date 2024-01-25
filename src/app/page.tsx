@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import Marquee from 'react-fast-marquee';
 import NavBar from '@/shared/components/Narbar';
 import Footer from '@/shared/components/Footer';
@@ -9,31 +8,23 @@ export default function Home() {
   return (
     <>
       <NavBar>
-        <div className='flex items-center gap-10'>
-          <nav>
-            <ul className='flex gap-6 font-medium'>
-              <li className='hover:text-blue-300'>
-                <Link href='/'>Features</Link>
-              </li>
-              <li className='hover:text-blue-300'>
-                <Link href='/'>Support</Link>
-              </li>
-              <li className='hover:text-blue-300'>
-                <Link href='/'>Pricing</Link>
-              </li>
-              <li className='hover:text-blue-300'>
-                <Link href='/'>Docs</Link>
-              </li>
-            </ul>
-          </nav>
-
-          <div className='flex items-center gap-2 space-x-4'>
-            <Button href='/login' label='Login' variant='info' size='small' />
-            <Button href='/signup' label='Sign up' size='small' />
-          </div>
+        <div className='flex max-sm:justify-evenly items-center gap-4 max-sm:border-t max-sm:pt-5'>
+          <Button
+            href='/login'
+            label='Login'
+            variant='info'
+            size='small'
+            className='max-sm:w-full'
+          />
+          <Button
+            href='/signup'
+            label='Sign up'
+            size='small'
+            className='max-sm:w-full'
+          />
         </div>
       </NavBar>
-      <main className='relative scroll-smooth bg-white'>
+      <main className='relative max-sm:mt-20 scroll-smooth bg-white'>
         <section className='pt-12 pb-12 px-4 md:px-0 bg-[#f9f9f9]'>
           <div className='container md:container px-4 md:px-8 mx-auto'>
             <div className='grid grid-cols-1 md:gap-8 md:grid-cols-2'>

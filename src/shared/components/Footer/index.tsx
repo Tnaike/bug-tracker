@@ -18,7 +18,7 @@ const Footer = () => {
             <Link href='/'>Privacy Policy</Link>
           </li>
           <li className='px-4 max-sm:py-1 hover:text-blue-300'>
-            <Link href='/'>Contact Us</Link>
+            <Link href='/'>Support</Link>
           </li>
         </ul>
         <div className='flex items-center justify-center text-xs py-4 px-4 mt-5 border-t pb-0'>
