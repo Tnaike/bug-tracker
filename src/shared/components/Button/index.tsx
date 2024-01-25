@@ -22,6 +22,7 @@ interface ButtonProps {
   svgIcon?: React.ReactElement;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   href?: string;
+  className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -35,12 +36,13 @@ const Button: React.FC<ButtonProps> = ({
   svgIcon,
   onClick = () => {},
   href,
+  className,
 }) => {
   if (href) {
     return (
       <Link
         href={href}
-        className={`button btn-${variant} btn-${size} h-${height}`}
+        className={`button btn-${variant} btn-${size} h-${height} ${className}`}
       >
         {label}
       </Link>
@@ -52,7 +54,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       disabled={disabled || isLoading}
       onClick={onClick}
-      className={`button btn-${variant} btn-${size} h-${height}`}
+      className={`button btn-${variant} btn-${size} h-${height} ${className}`}
     >
       {svgIcon && <span>{svgIcon}</span>}
       {label}
