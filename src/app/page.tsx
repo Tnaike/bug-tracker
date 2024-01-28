@@ -72,15 +72,15 @@ export default function Home() {
             <div className='relative flex w-full items-center justify-start overflow-x-clip'>
               <Marquee autoFill>
                 <div className='flex w-full justify-center'>
-                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-12'>
                     <Image
                       src='/aws_logo.svg'
-                      width={77}
-                      height={35}
+                      width={60}
+                      height={30}
                       alt='Amazon Web Services'
                     />
                   </div>
-                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-12'>
                     <Image
                       src='/next.svg'
                       width={77}
@@ -88,7 +88,7 @@ export default function Home() {
                       alt='Nextjs'
                     />
                   </div>
-                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-12'>
                     <Image
                       src='/Tubi_logo_1.svg'
                       width={77}
@@ -96,15 +96,15 @@ export default function Home() {
                       alt='AWS'
                     />
                   </div>
-                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-12'>
                     <Image
                       src='/ByteDance_logo.svg'
-                      width={77}
-                      height={35}
+                      width={140}
+                      height={70}
                       alt='ByteDance'
                     />
                   </div>
-                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-12'>
                     <Image
                       src='/GSK_logo.svg'
                       width={77}
@@ -112,7 +112,7 @@ export default function Home() {
                       alt='GSK'
                     />
                   </div>
-                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-10'>
+                  <div className='mx-6 flex items-center justify-center md:mx-8 xl:mx-12'>
                     <Image
                       src='/vercel.svg'
                       width={77}

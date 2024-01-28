@@ -9,7 +9,7 @@ const Footer = () => {
             <Link href='/'>BugTracker Home</Link>
           </li>
           <li className='px-4 max-sm:py-1 sm:border-r hover:text-blue-300'>
-            <Link href='/'>About us</Link>
+            <Link href='/'>About BugTracker</Link>
           </li>
           <li className='px-4 max-sm:py-1 sm:border-r hover:text-blue-300'>
             <Link href='/'>Terms of Service</Link>
