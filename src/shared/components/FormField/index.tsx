@@ -32,8 +32,8 @@ const FormField = ({
           hideLabel ? 'sr-only' : ''
         )}
       >
-        FormField
-      </div>{' '}
+        {label}
+      </div>
       {children}
       {error && <div className='mt-2 text-xs text-error'>{error}</div>}
     </label>
