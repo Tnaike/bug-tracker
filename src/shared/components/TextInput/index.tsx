@@ -21,6 +21,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     | 'file';
   label?: string;
   icon?: React.ReactNode;
+  error?: string;
 }
 
 const TextInput = React.forwardRef<
@@ -43,6 +44,7 @@ const TextInput = React.forwardRef<
       name,
       label,
       icon,
+      error,
     },
     ref
   ) => {
@@ -56,7 +58,8 @@ const TextInput = React.forwardRef<
         )}
         <input
           className={cn(
-            'block w-full rounded-[6px] border border-stroke p-3 text-base font-normal text-text focus:border-blue-200 focus:outline-none focus:ring-blue-100 disabled:cursor-not-allowed disabled:bg-disabled disabled:text-input',
+            'block w-full rounded-[6px] border border-stroke-200 p-3 text-base font-normal text-text focus:border-blue-200 focus:outline-none focus:ring-blue-100 disabled:cursor-not-allowed disabled:bg-disabled disabled:text-input',
+            { 'border-error': error },
             className
           )}
           ref={ref as React.ForwardedRef<HTMLInputElement>}
