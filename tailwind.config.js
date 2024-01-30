@@ -57,7 +57,10 @@ module.exports = {
           100: '#D3FDE9',
           50: '#E2FEF0',
         },
-        disabled: '#F7F7F8',
+        text: '#0b1e4b',
+        input: '#989BA1',
+        icon: '#98A2B3',
+        stroke: { 200: '#D0D5DD', 100: '#d9d9d9' },
         error: '#D92D20',
       },
       fontSize: {
