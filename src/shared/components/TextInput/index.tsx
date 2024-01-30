@@ -19,6 +19,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     | 'url'
     | 'week'
     | 'file';
+  label?: string;
   icon?: React.ReactNode;
 }
 
@@ -40,12 +41,14 @@ const TextInput = React.forwardRef<
       onFocus,
       onBlur,
       name,
+      label,
       icon,
     },
     ref
   ) => {
     return (
       <div className='relative'>
+        {label && <label htmlFor={id}>{label}</label>}
         {icon && (
           <div className='absolute inset-y-0 left-0 pl-3 flex items-center'>
             {icon}
@@ -73,7 +76,6 @@ const TextInput = React.forwardRef<
     );
   }
 );
-
 
 TextInput.displayName = 'TextInput';
 
