@@ -3,6 +3,7 @@
 import React from 'react';
 import './Button.css';
 import Link from 'next/link';
+import Spinner from '@/shared/components/Spinner';
 
 interface ButtonProps {
   label?: string;
@@ -19,6 +20,7 @@ interface ButtonProps {
   height?: string;
   disabled?: boolean;
   isLoading?: boolean;
+  loadingIcon?: React.ReactElement;
   svgIcon?: React.ReactElement;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   href?: string;
@@ -33,6 +35,7 @@ const Button: React.FC<ButtonProps> = ({
   height = 'fit',
   disabled = false,
   isLoading = false,
+  loadingIcon = <Spinner />,
   svgIcon,
   onClick = () => {},
   href,
@@ -56,9 +59,8 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       className={`button btn-${variant} btn-${size} h-${height} ${className}`}
     >
-      {svgIcon && <span>{svgIcon}</span>}
+      {isLoading ? <span>{loadingIcon}</span> : <span>{svgIcon}</span>}
       {label}
-      {isLoading && disabled}
     </button>
   );
 };

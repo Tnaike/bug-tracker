@@ -2,7 +2,7 @@
 [type='button'],
 [type='submit'],
 [type='reset'] {
-  @apply disabled:opacity-25 disabled:cursor-not-allowed font-medium rounded flex items-center outline-none;
+  @apply disabled:opacity-35 disabled:cursor-not-allowed font-medium rounded flex items-center outline-none;
 }
 
 .btn-primary,

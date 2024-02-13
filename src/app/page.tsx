@@ -7,7 +7,7 @@ import Button from '@/shared/components/Button';
 export default function Home() {
   return (
     <>
-      <NavBar/>
+      <NavBar />
       <main className='relative max-sm:mt-20 scroll-smooth bg-white'>
         <section className='pt-12 pb-12 px-4 md:px-0 bg-[#f9f9f9]'>
           <div className='container md:container px-4 md:px-8 mx-auto'>
