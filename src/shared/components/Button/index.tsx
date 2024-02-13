@@ -4,6 +4,7 @@ import React from 'react';
 import './Button.css';
 import Link from 'next/link';
 import Spinner from '@/shared/components/Spinner';
+import { cn } from '@/utils/utilHelper';
 
 interface ButtonProps {
   label?: string;
@@ -45,7 +46,10 @@ const Button: React.FC<ButtonProps> = ({
     return (
       <Link
         href={href}
-        className={`button btn-${variant} btn-${size} h-${height} ${className}`}
+        className={cn(
+          `button btn-${variant} btn-${size} h-${height}`,
+          className
+        )}
       >
         {label}
       </Link>
