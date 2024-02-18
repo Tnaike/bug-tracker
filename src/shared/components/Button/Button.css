@@ -7,7 +7,7 @@
 
 .btn-primary,
 .button.btn-primary {
-  @apply bg-blue-300 hover:bg-blue-50 text-white justify-center hover:text-blue-300 border border-transparent hover:border-blue-300;
+  @apply bg-blue-300 bg-gradient-to-r hover:from-blue-400 hover:to-blue-700 text-white justify-center hover:text-white border border-transparent;
 }
 
 .btn-secondary,
@@ -37,7 +37,7 @@
 
 .btn-basic,
 .button.btn-basic {
-  @apply bg-transparent justify-center text-gray-500 hover:bg-transparent border-none;
+  @apply bg-transparent justify-center hover:bg-transparent border-none;
 }
 
 .btn-info,
@@ -64,4 +64,8 @@
 
 .btn-large {
   @apply px-3.5 md:px-7 py-5 text-base md:text-md font-medium;
+}
+
+.btn-text {
+  @apply p-0 font-medium;
 }

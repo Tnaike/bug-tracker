@@ -18,7 +18,7 @@ interface ButtonProps {
     | 'info'
     | 'transparent'
     | 'basic';
-  size?: 'default' | 'small' | 'medium' | 'large';
+  size?: 'default' | 'small' | 'medium' | 'large' | 'text';
   height?: string;
   disabled?: boolean;
   isLoading?: boolean;
@@ -62,7 +62,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       disabled={disabled || isLoading}
       onClick={onClick}
-      className={`button btn-${variant} btn-${size} h-${height} ${className}`}
+      className={cn(`button btn-${variant} btn-${size} h-${height}`, className)}
     >
       {isLoading ? <span>{loadingIcon}</span> : <span>{svgIcon}</span>}
       {label}

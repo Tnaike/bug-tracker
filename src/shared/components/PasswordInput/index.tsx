@@ -4,7 +4,7 @@ import React, { InputHTMLAttributes, useState } from 'react';
 import TextInput from '@/shared/components/TextInput';
 
 interface PasswordInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string;
+  label?: string;
   icon?: React.ReactNode;
   error?: string;
 }
@@ -15,7 +15,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
       id = 'password',
       className,
       placeholder,
-      required = true,
+      required,
       value,
       defaultValue,
       onChange,
