@@ -15,24 +15,22 @@ const FormField = ({
   label,
   error,
   className,
-  hideLabel,
+  hideLabel = false,
   children,
 }: Props) => {
   return (
     <label
       htmlFor={htmlFor}
-      className={cn(
-        'group mb-2 block text-sm text-gray-600 dark:text-white',
-        className
-      )}
+      className={cn('group mb-2 block text-sm text-neutral-800', className)}
     >
       <div
         className={cn(
-          'mb-1 text-gray-600 group-focus-within:text-blue-500 group-focus:text-blue-500',
+          'mb-1 text-neutral-800 group-focus-within:text-blue-500 group-focus:text-blue-500',
+          className,
           hideLabel ? 'sr-only' : ''
         )}
       >
-        {label}
+        {!hideLabel && label}
       </div>
       {children}
       {error && <div className='mt-2 text-xs text-error'>{error}</div>}
