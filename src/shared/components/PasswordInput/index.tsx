@@ -15,7 +15,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
       id = 'password',
       className,
       placeholder,
-      required = true,
+      required,
       value,
       defaultValue,
       onChange,

@@ -36,14 +36,14 @@ const SignUpForm = () => {
           <PasswordInput id='confirmPassword' placeholder='Enter Password' />
         </FormField>
       </div>
-      <div className='flex flex-wrap mb-5 text-gray-700 text-sm font-medium'>
+      <div className='flex flex-wrap mb-5 text-gray-700 text-sm items-center font-medium'>
         <p>By clicking continue, I agree to the </p>
-        <div className='cursor-pointer text-blue-300'>
-          <Button label='Terms of Service' variant='transparent' />
+        <div className='cursor-pointer text-blue-300 ml-1'>
+          <Button label='Terms of Service' size='text' variant='basic' />
         </div>
       </div>
       <div className='mb-6 flex items-center justify-center'>
-        <Button type='submit' className='w-full' label='Create account' />
+        <Button type='submit' size='medium' className='w-full' label='Create account' />
       </div>
     </form>
   );
