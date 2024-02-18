@@ -58,7 +58,7 @@ const TextInput = React.forwardRef<
         )}
         <input
           className={cn(
-            'block w-full rounded-[6px] border border-stroke-200 p-3 text-base font-normal text-text focus:border-blue-200 focus:outline-none focus:ring-blue-100 disabled:cursor-not-allowed disabled:bg-disabled disabled:text-input',
+            'block w-full rounded-[6px] border border-stroke-200 p-3 text-base font-normal text-text focus:border-blue-200 focus:outline-none focus:ring-blue-100 disabled:cursor-not-allowed disabled:bg-disabled disabled:text-input placeholder:text-slate-400',
             { 'border-error': error },
             className
           )}

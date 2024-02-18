@@ -16,7 +16,8 @@ interface ButtonProps {
     | 'danger'
     | 'warning'
     | 'info'
-    | 'transparent';
+    | 'transparent'
+    | 'basic';
   size?: 'default' | 'small' | 'medium' | 'large';
   height?: string;
   disabled?: boolean;
