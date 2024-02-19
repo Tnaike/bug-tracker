@@ -25,7 +25,7 @@ const FormField = ({
     >
       <div
         className={cn(
-          'mb-1 text-neutral-800 group-focus-within:text-blue-500 group-focus:text-blue-500',
+          'mb-1 text-neutral-800 font-medium group-focus-within:text-blue-500 group-focus:text-blue-500',
           className,
           hideLabel ? 'sr-only' : ''
         )}
