@@ -13,8 +13,8 @@ const AuthSectionHeader: React.FC<AuthSectionHeaderProps> = ({
 }) => {
   return (
     <div>
-      {title && <h1 className='text-4xl font-medium mb-2'>{title}</h1>}
-      {subtitle && <p className='text-lg text-gray-600 mb-2'>{subtitle}</p>}
+      {title && <h1 className="text-lg md:text-3xl font-semibold mb-2">{title}</h1>}
+      {subtitle && <p className="text-base text-gray-600 mb-6">{subtitle}</p>}
       {children && <div>{children}</div>}
     </div>
   );
