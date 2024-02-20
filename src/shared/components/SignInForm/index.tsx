@@ -4,6 +4,7 @@ import FormField from '@/shared/components/FormField';
 import PasswordInput from '@/shared/components/PasswordInput';
 import TextInput from '@/shared/components/TextInput';
 import Button from '@/shared/components/Button';
+import ROUTE from '@/app/routes';
 
 const SignInForm = () => {
   return (
@@ -19,7 +20,7 @@ const SignInForm = () => {
         </FormField>
       </div>
       <div className="flex flex-wrap mb-6 text-sm items-center font-semibold justify-end">
-        <Link href="/password/forgot" className="text-blue-500">
+        <Link href={ROUTE.forgotPassword} className="text-blue-500">
           <p>Forgot Password? </p>
         </Link>
       </div>

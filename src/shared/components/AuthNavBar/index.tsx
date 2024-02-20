@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ROUTE from '@/app/routes';
 
 function AuthNavBar() {
   return (
     <header className="bg-transparent w-full z-30 mb-5">
       <div className="flex items-center min-h-[4rem] max-sm:justify-center">
-        <Link href="/">
+        <Link href={ROUTE.home}>
           <Image
             className="relative"
             src="/images/bugTracker-logo.png"
