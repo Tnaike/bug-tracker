@@ -9,9 +9,9 @@ const SignUp = () => {
       <div>
         <SignUpForm />
       </div>
-      <div className="text-gray-800 text-sm font-semibold items-center">
-        Have a BugTracker Account?{' '}
-        <Link href="/signin" className="text-blue-500">
+      <div className="flex text-gray-800 text-sm font-semibold items-center justify-center">
+        Have a BugTracker Account?
+        <Link href="/signin" className="text-blue-500 indent-1">
           Sign In
         </Link>
       </div>

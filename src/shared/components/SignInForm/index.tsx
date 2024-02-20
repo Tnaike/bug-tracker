@@ -19,7 +19,7 @@ const SignInForm = () => {
         </FormField>
       </div>
       <div className="flex flex-wrap mb-6 text-sm items-center font-semibold justify-end">
-        <Link href="/forgotPassword" className="text-blue-500">
+        <Link href="/password/forgot" className="text-blue-500">
           <p>Forgot Password? </p>
         </Link>
       </div>
