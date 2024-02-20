@@ -1,6 +1,6 @@
-import AuthNavBar from '@/shared/components/AuthNavBar';
-import Image from 'next/image';
 import React from 'react';
+import Image from 'next/image';
+import AuthNavBar from '@/shared/components/AuthNavBar';
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -20,7 +20,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-1 min-w-96 max-sm:px-8 px-16 overflow-auto">
+        <div className="flex flex-1 sm:min-w-96 max-sm:px-8 px-16 overflow-auto">
           <div className="flex flex-col h-full w-full">
             <div className="relative min-h-16">
               <AuthNavBar />

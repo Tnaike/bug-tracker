@@ -22,7 +22,7 @@ const SignUpForm = () => {
       </div>
       <div className="flex max-sm:flex-col gap-3 mb-5">
         <FormField htmlFor="password" label="Password" className="grow">
-          <PasswordInput id="password" placeholder="Enter Password" />
+          <PasswordInput id="password" placeholder="Enter password" />
         </FormField>
         {/* <FormField
           htmlFor='confirmPassword'
@@ -32,7 +32,7 @@ const SignUpForm = () => {
           <PasswordInput id='confirmPassword' placeholder='Enter Password' />
         </FormField> */}
       </div>
-      <div className="flex flex-wrap mb-5 text-gray-700 text-sm items-center font-medium">
+      <div className="flex flex-wrap mb-5 text-gray-700 text-[13px] items-center font-medium">
         <p>By clicking continue, I agree to the </p>
         <div className="cursor-pointer text-blue-300 ml-1">
           <Button label="Terms of Service" size="text" variant="basic" />
