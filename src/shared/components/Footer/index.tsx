@@ -16,7 +16,7 @@ const Footer = () => {
             <Link href={ROUTE.terms}>Terms of Service</Link>
           </li>
           <li className="px-4 max-sm:py-1 sm:border-r hover:text-blue-300">
-            <Link href="/">Privacy Policy</Link>
+            <Link href={ROUTE.privacy}>Privacy Policy</Link>
           </li>
           <li className="px-4 max-sm:py-1 hover:text-blue-300">
             <Link href="/">Support</Link>
