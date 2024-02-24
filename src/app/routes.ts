@@ -3,6 +3,7 @@ const ROUTE = {
   signIn: '/signin',
   signUp: '/signup',
   forgotPassword: '/password/forgot',
+  terms: '/terms',
 };
 
 export default ROUTE;
