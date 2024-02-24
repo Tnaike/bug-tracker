@@ -1,28 +1,46 @@
+'use client';
+
+import { SignUpUserInput, SignUpUserSchema } from '@/lib/validations/auth.schema';
 import FormField from '@/shared/components/FormField';
 import PasswordInput from '@/shared/components/PasswordInput';
 import TextInput from '@/shared/components/TextInput';
-import React from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 import Button from '../Button';
 
 const SignUpForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<SignUpUserInput>({
+    resolver: zodResolver(SignUpUserSchema),
+  });
+
+  const handleSignUp = async (data: SignUpUserInput) => {
+    console.log('DATA', data);
+    reset();
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(handleSignUp)}>
       <div className="flex max-sm:flex-col max-sm:gap-3 gap-4 mb-3">
-        <FormField htmlFor="firstName" label="First Name" className="grow">
-          <TextInput type="text" id="firstName" placeholder="Enter first name" />
+        <FormField htmlFor="firstName" label="First Name" className="grow" error={errors.firstName?.message}>
+          <TextInput type="text" id="firstName" placeholder="Enter first name" {...register('firstName')} />
         </FormField>
-        <FormField htmlFor="lastName" label="Last Name" className="grow">
-          <TextInput type="text" id="lastName" placeholder="Enter last name" />
+        <FormField htmlFor="lastName" label="Last Name" className="grow" error={errors.lastName?.message}>
+          <TextInput type="text" id="lastName" placeholder="Enter last name" {...register('lastName')} />
         </FormField>
       </div>
       <div className="flex mb-3">
-        <FormField htmlFor="email" label="Email Address" className="grow">
-          <TextInput type="text" id="email" placeholder="Enter email address" />
+        <FormField htmlFor="email" label="Email Address" className="grow" error={errors.email?.message}>
+          <TextInput type="text" id="email" placeholder="Enter email address" {...register('email')} />
         </FormField>
       </div>
       <div className="flex max-sm:flex-col gap-3 mb-5">
-        <FormField htmlFor="password" label="Password" className="grow">
-          <PasswordInput id="password" placeholder="Enter password" />
+        <FormField htmlFor="password" label="Password" className="grow" error={errors.password?.message}>
+          <PasswordInput id="password" placeholder="Enter password" {...register('password')} />
         </FormField>
         {/* <FormField
           htmlFor='confirmPassword'
