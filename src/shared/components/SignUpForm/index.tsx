@@ -1,11 +1,13 @@
 'use client';
 
+import ROUTE from '@/app/routes';
 import { SignUpUserInput, SignUpUserSchema } from '@/lib/validations/auth.schema';
 import Button from '@/shared/components/Button';
 import FormField from '@/shared/components/FormField';
 import PasswordInput from '@/shared/components/PasswordInput';
 import TextInput from '@/shared/components/TextInput';
 import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
 const SignUpForm = () => {
@@ -44,10 +46,15 @@ const SignUpForm = () => {
         </FormField>
       </div>
       <div className="flex flex-wrap mb-5 text-gray-700 text-[13px] items-center font-medium">
-        <p>By clicking continue, I agree to the </p>
-        <div className="cursor-pointer text-blue-300 ml-1">
+        <p>
+          By clicking continue, I agree to the{' '}
+          <Link href={ROUTE.terms} className="text-blue-300">
+            Terms of Service
+          </Link>
+        </p>
+        {/* <div className="cursor-pointer text-blue-300 ml-1">
           <Button label="Terms of Service" size="text" variant="basic" />
-        </div>
+        </div> */}
       </div>
       <div className="mb-6 flex items-center justify-center">
         <Button type="submit" size="medium" className="w-full" label="Create account" />

@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 const TermsOfService = () => {
   return (
-    <div className="relative max-sm:mt-16 scroll-smooth bg-white">
+    <div className="relative scroll-smooth bg-white">
       <div className="container md:container px-4 md:px-8 mx-auto">
-        <h1 className="flex mb-6 font-semibold md:text-2xl">BugTracker Terms of Service</h1>
+        {/* <h1 className="flex mb-6 font-semibold md:text-2xl">BugTracker Terms of Service</h1> */}
         <div className="flex flex-col py-2 text-sm md:text-base text-gray-800">
-          <p className="mb-8">
+          <p className="mb-8 font-medium md:text-2xl">
             Welcome to BugTracker! These Terms of Service ("Terms") govern your access to and use of BugTracker,
             including any content, functionality, and services offered on or through the BugTracker website or mobile
             application (collectively, the "Services"). Please read these Terms carefully before using the Services.
