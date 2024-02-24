@@ -1,3 +1,5 @@
+'use client';
+
 import { ForgotPasswordInput, ForgotPasswordSchema } from '@/lib/validations/auth.schema';
 import Button from '@/shared/components/Button';
 import FormField from '@/shared/components/FormField';
