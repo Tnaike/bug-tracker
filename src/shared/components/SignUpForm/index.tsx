@@ -1,12 +1,12 @@
 'use client';
 
 import { SignUpUserInput, SignUpUserSchema } from '@/lib/validations/auth.schema';
+import Button from '@/shared/components/Button';
 import FormField from '@/shared/components/FormField';
 import PasswordInput from '@/shared/components/PasswordInput';
 import TextInput from '@/shared/components/TextInput';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import Button from '../Button';
 
 const SignUpForm = () => {
   const {
@@ -18,13 +18,13 @@ const SignUpForm = () => {
     resolver: zodResolver(SignUpUserSchema),
   });
 
-  const handleSignUp = async (data: SignUpUserInput) => {
+  const handleFormSignUp = async (data: SignUpUserInput) => {
     console.log('DATA', data);
     reset();
   };
 
   return (
-    <form onSubmit={handleSubmit(handleSignUp)}>
+    <form onSubmit={handleSubmit(handleFormSignUp)}>
       <div className="flex max-sm:flex-col max-sm:gap-3 gap-4 mb-3">
         <FormField htmlFor="firstName" label="First Name" className="grow" error={errors.firstName?.message}>
           <TextInput type="text" id="firstName" placeholder="Enter first name" {...register('firstName')} />
