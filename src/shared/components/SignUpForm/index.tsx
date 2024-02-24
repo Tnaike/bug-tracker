@@ -42,13 +42,6 @@ const SignUpForm = () => {
         <FormField htmlFor="password" label="Password" className="grow" error={errors.password?.message}>
           <PasswordInput id="password" placeholder="Enter password" {...register('password')} />
         </FormField>
-        {/* <FormField
-          htmlFor='confirmPassword'
-          label='Confirm Password'
-          className='grow'
-        >
-          <PasswordInput id='confirmPassword' placeholder='Enter Password' />
-        </FormField> */}
       </div>
       <div className="flex flex-wrap mb-5 text-gray-700 text-[13px] items-center font-medium">
         <p>By clicking continue, I agree to the </p>
