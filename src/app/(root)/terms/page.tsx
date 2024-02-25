@@ -5,7 +5,7 @@ import TermsOfService from '@/shared/components/TermsOfService';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'BugTracker | Terms of Service',
+  title: 'Terms of Service | BugTracker',
 };
 
 function Terms() {
