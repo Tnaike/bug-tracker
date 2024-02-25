@@ -5,7 +5,7 @@ import PrivacyPolicy from '@/shared/components/PrivacyPolicy';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'BugTracker | Privacy Policy',
+  title: 'Privacy Policy | BugTracker',
 };
 
 function Privacy() {

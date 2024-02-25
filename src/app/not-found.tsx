@@ -5,7 +5,7 @@ import AuthNavBar from '@/shared/components/AuthNavBar';
 import ROUTE from '@/app/routes';
 
 export const metadata: Metadata = {
-  title: 'BugTracker | Page not found',
+  title: 'Page not found | BugTracker',
   description: 'Track, identify, and swiftly fix bugs.',
 };
 
