@@ -61,7 +61,7 @@ const NavBar = ({ children }: NavBarProps) => {
                 <Link href="/">Features</Link>
               </li>
               <li className="py-1.5 hover:text-blue-300">
-                <Link href="/">Pricing</Link>
+                <Link href={ROUTE.pricing}>Pricing</Link>
               </li>
               <li className="py-1.5 hover:text-blue-300">
                 <Link href="/">Docs</Link>

@@ -5,6 +5,7 @@ const ROUTE = {
   forgotPassword: '/password/forgot',
   terms: '/terms',
   privacy: '/privacy',
+  pricing: '/pricing',
 };
 
 export default ROUTE;
