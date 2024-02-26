@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="top-0 w-full bg-white pt-5">
       <div className="flex-col container w-full items-center justify-center py-4 mx-auto">
-        <ul className="sm:flex px-4 items-center justify-center text-xs mb-2">
+        <ul className="sm:flex items-center justify-center text-xs mb-2">
           <li className="px-4 max-sm:py-1 sm:border-r hover:text-blue-300">
             <Link href={ROUTE.home}>BugTracker Home</Link>
           </li>
