@@ -1,16 +1,18 @@
 'use client';
 
+import ROUTE from '@/app/routes';
+import Button from '@/shared/components/Button';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import Button from '@/shared/components/Button';
-import ROUTE from '@/app/routes';
 
 type NavBarProps = {
   children?: React.ReactNode;
 };
 
 const NavBar = ({ children }: NavBarProps) => {
+  const pathname = usePathname();
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const toggleMobileNav = () => {
@@ -60,7 +62,7 @@ const NavBar = ({ children }: NavBarProps) => {
               <li className="py-1.5 hover:text-blue-300">
                 <Link href="/">Features</Link>
               </li>
-              <li className="py-1.5 hover:text-blue-300">
+              <li className={`py-1.5 ${pathname === ROUTE.pricing ? 'text-blue-300' : 'hover:text-blue-300'}`}>
                 <Link href={ROUTE.pricing}>Pricing</Link>
               </li>
               <li className="py-1.5 hover:text-blue-300">
