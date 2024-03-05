@@ -44,7 +44,7 @@ export default function Home() {
         </section>
         <section className="py-6 px-4 md:py-8 md:px-0 md:my-4">
           <div className="container md:container mx-auto">
-            <h2 className="font-display text-base font-medium mt-6 md:mt-0 xl:text-lg mb-8 text-center text-gray-400/80">
+            <h2 className="font-display text-base font-medium mt-6 md:mt-0 xl:text-lg mb-8 pb-4 text-center text-gray-400/80">
               Thousands of businesses scale faster and more efficiently by building on BugTracker.
             </h2>
             <div className="relative flex w-full items-center justify-start overflow-x-clip">
