@@ -3,7 +3,7 @@ import ROUTE from '@/app/routes';
 
 const Footer = () => {
   return (
-    <footer className="top-0 w-full bg-white pt-5">
+    <footer className="top-0 w-full bg-gradient-to-r from-white to-rgb(247, 249, 252) pt-5">
       <div className="flex-col container w-full items-center justify-center py-4 mx-auto">
         <ul className="sm:flex items-center justify-center text-xs mb-2">
           <li className="px-4 max-sm:py-1 sm:border-r hover:text-blue-300">
