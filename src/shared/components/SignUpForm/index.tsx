@@ -16,37 +16,13 @@ const SignUpForm = () => {
   const {
     register,
     handleSubmit,
-    setError,
     formState: { errors },
-    reset,
   } = useForm<SignUpUserInput>({
     resolver: zodResolver(SignUpUserSchema),
   });
 
   const handleFormSignUp = async (data: SignUpUserInput) => {
     console.log('DATA', data);
-    try {
-      const res = await fetch('/api/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          fullName: `${data.firstName} ${data.lastName}`,
-          email: data.email,
-          password: data.password,
-        }),
-      });
-      if (res.status === 400) {
-        setError('root', { message: 'This email is already registered' });
-      }
-      if (res.status === 200) {
-        console.log('SUCCESS', data);
-        router.push('/privacy');
-        reset();
-      }
-    } catch (error: any) {
-      setError('root', { message: error });
-      console.log('ERROR', error);
-    }
   };
 
   return (
