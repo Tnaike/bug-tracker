@@ -22,7 +22,21 @@ const SignUpForm = () => {
   });
 
   const handleFormSignUp = async (data: SignUpUserInput) => {
-    console.log('DATA', data);
+    const response = await fetch('/api/user', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: data.email,
+        name: `${data.firstName} ${data.lastName}`,
+        password: data.password,
+      }),
+    });
+
+    if (response.status === 201) {
+      router.push(ROUTE.signIn);
+    } else {
+      console.error('Registration failed');
+    }
   };
 
   return (
