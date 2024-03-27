@@ -51,3 +51,12 @@ export const ChangePasswordSchema = z
   });
 
 export type ChangePasswordInput = z.infer<typeof ChangePasswordSchema>;
+
+export const UserSchema = z.object({
+  name: z.string().min(1, 'Name is required').min(3, 'Nmae must be at least 3 characters').max(50),
+  email: createEmailRules(),
+  password: createPasswordRules(),
+  image: z.string().optional(),
+});
+
+export type UserSchemaInput = z.infer<typeof UserSchema>;
