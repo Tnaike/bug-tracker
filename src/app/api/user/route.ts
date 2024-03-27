@@ -1,3 +1,4 @@
+import { UserSchema } from '@/lib/validations/auth.schema';
 import prisma from '@/utils/db';
 import { hash } from 'bcrypt';
 import { NextResponse } from 'next/server';
@@ -5,7 +6,7 @@ import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { email, name, password, image } = body;
+    const { email, name, password, image } = UserSchema.parse(body);
 
     // Check if email already exist
     const userExistsByEmail = await prisma.user.findUnique({
