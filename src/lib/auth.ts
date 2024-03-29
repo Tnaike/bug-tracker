@@ -1,7 +1,14 @@
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import { compare } from 'bcrypt';
 import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import db from './db';
 
 export const authOptions: NextAuthOptions = {
+  adapter: PrismaAdapter(db),
+  session: {
+    strategy: 'jwt',
+  },
   pages: {
     signIn: '/signin',
   },
@@ -9,20 +16,31 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
-        username: { label: 'Email', type: 'text', placeholder: 'Enter email' },
+        email: { label: 'Email', type: 'text', placeholder: 'Enter email' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials, req) {
-        // Add logic here to look up the user from the credentials supplied
-        const user = { id: '1', name: 'J Smith', email: 'jsmith@example.com' };
-
-        if (user) {
-          // Any object returned will be saved in `user` property of the JWT
-          return user;
-        } else {
-          // If you return null then an error will be displayed advising the user to check their details.
+      async authorize(credentials) {
+        if (!credentials?.email || !credentials?.password) {
           return null;
         }
+
+        const existingUser = await db.user.findUnique({
+          where: { email: credentials?.email },
+        });
+        if (!existingUser) {
+          return null;
+        }
+
+        const passwordMatch = await compare(credentials?.password, existingUser.password);
+
+        if (!passwordMatch) {
+          return null;
+        }
+
+        return {
+          id: existingUser.id,
+          email: existingUser.email,
+        };
       },
     }),
   ],

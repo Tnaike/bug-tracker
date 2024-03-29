@@ -7,20 +7,38 @@ import FormField from '@/shared/components/FormField';
 import PasswordInput from '@/shared/components/PasswordInput';
 import TextInput from '@/shared/components/TextInput';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { signIn } from 'next-auth/react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 
 const SignInForm = () => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<SignInUserInput>({
     resolver: zodResolver(SignInUserSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
   });
 
   const handleFormSubmit = async (data: SignInUserInput) => {
-    console.log('DATA', data);
+    const signInData = await signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      redirect: false,
+    });
+
+    if (signInData?.error) {
+      console.log(signInData.error);
+    } else {
+      router.push(ROUTE.admin.dashboard);
+    }
   };
 
   return (
