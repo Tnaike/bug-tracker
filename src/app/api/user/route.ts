@@ -1,5 +1,5 @@
 import { UserSchema } from '@/lib/validations/auth.schema';
-import prisma from '@/utils/db';
+import prisma from '@/lib/db';
 import { hash } from 'bcrypt';
 import { NextResponse } from 'next/server';
 
