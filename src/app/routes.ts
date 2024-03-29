@@ -6,6 +6,9 @@ const ROUTE = {
   terms: '/terms',
   privacy: '/privacy',
   pricing: '/pricing',
+  admin: {
+    dashboard: '/admin',
+  }
 };
 
 export default ROUTE;

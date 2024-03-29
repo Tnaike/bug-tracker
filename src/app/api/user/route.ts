@@ -1,5 +1,5 @@
+import db from '@/lib/db';
 import { UserSchema } from '@/lib/validations/auth.schema';
-import prisma from '@/utils/db';
 import { hash } from 'bcrypt';
 import { NextResponse } from 'next/server';
 
@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const { email, name, password, image } = UserSchema.parse(body);
 
     // Check if email already exist
-    const userExistsByEmail = await prisma.user.findUnique({
+    const userExistsByEmail = await db.user.findUnique({
       where: { email: email },
     });
 
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
     }
 
     const hashedPassword = await hash(password, 10);
-    const newUser = await prisma.user.create({
+    const newUser = await db.user.create({
       data: { email, name, password: hashedPassword, image },
     });
     const { password: newUserPassword, ...rest } = newUser;
