@@ -3,6 +3,8 @@ This is a web platform bug tracking system for managing and addressing issues wi
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+![alt text](image.png)
+
 ## Getting Started
 
 First, run the development server:
@@ -16,8 +18,6 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-![alt text](image.png)
 
 ### Key Features:
 
