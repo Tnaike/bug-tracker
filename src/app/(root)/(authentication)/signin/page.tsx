@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import ROUTE from '@/app/routes';
 import AuthSectionHeader from '@/shared/components/AuthSectionHeader';
 import SignInForm from '@/shared/components/SignInForm';
-import ROUTE from '@/app/routes';
+import Link from 'next/link';
 
 const SignIn = () => {
   return (
