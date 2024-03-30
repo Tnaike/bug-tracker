@@ -11,6 +11,7 @@ import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const SignInForm = () => {
   const router = useRouter();
@@ -35,33 +36,36 @@ const SignInForm = () => {
     });
 
     if (signInData?.error) {
-      console.log(signInData.error);
+      toast.error('Something went wrong. Please try again', { theme: 'colored' });
     } else {
+      router.refresh();
       router.push(ROUTE.admin.dashboard);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(handleFormSubmit)}>
-      <div className="flex mb-3">
-        <FormField htmlFor="email" label="Email Address" className="grow" error={errors.email?.message}>
-          <TextInput type="text" id="email" placeholder="Enter your email" {...register('email')} />
-        </FormField>
-      </div>
-      <div className="flex gap-3 mb-2">
-        <FormField htmlFor="password" label="Password" className="grow" error={errors.password?.message}>
-          <PasswordInput id="password" placeholder="Enter your password" {...register('password')} />
-        </FormField>
-      </div>
-      <div className="flex flex-wrap mb-6 text-sm items-center font-semibold justify-end">
-        <Link href={ROUTE.forgotPassword} className="text-blue-500">
-          <p>Forgot Password? </p>
-        </Link>
-      </div>
-      <div className="mb-6 flex items-center justify-center">
-        <Button type="submit" size="medium" className="w-full" label="Proceed to Dashboard" />
-      </div>
-    </form>
+    <>
+      <form onSubmit={handleSubmit(handleFormSubmit)}>
+        <div className="flex mb-3">
+          <FormField htmlFor="email" label="Email Address" className="grow" error={errors.email?.message}>
+            <TextInput type="text" id="email" placeholder="Enter your email" {...register('email')} />
+          </FormField>
+        </div>
+        <div className="flex gap-3 mb-2">
+          <FormField htmlFor="password" label="Password" className="grow" error={errors.password?.message}>
+            <PasswordInput id="password" placeholder="Enter your password" {...register('password')} />
+          </FormField>
+        </div>
+        <div className="flex flex-wrap mb-6 text-sm items-center font-semibold justify-end">
+          <Link href={ROUTE.forgotPassword} className="text-blue-500">
+            <p>Forgot Password? </p>
+          </Link>
+        </div>
+        <div className="mb-6 flex items-center justify-center">
+          <Button type="submit" size="medium" className="w-full" label="Proceed to Dashboard" />
+        </div>
+      </form>
+    </>
   );
 };
 

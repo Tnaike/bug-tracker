@@ -1,5 +1,7 @@
-import './globals.css';
 import { Montserrat } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './globals.css';
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -29,7 +31,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:site_name" content={metadata.name} />
         <meta property="og:image" content={metadata.image} />
       </head>
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        <main className="flex h-screen flex-col">{children}</main>
+        <ToastContainer />
+      </body>
     </html>
   );
 }
