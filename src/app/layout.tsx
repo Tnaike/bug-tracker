@@ -1,6 +1,6 @@
+import Provider from '@/app/providers';
 import { Montserrat } from 'next/font/google';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import QueryClientProvider from './QueryClientProvider';
 import './globals.css';
 
 const montserrat = Montserrat({
@@ -32,8 +32,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:image" content={metadata.image} />
       </head>
       <body className={montserrat.className}>
-        <main className="flex h-screen flex-col">{children}</main>
-        <ToastContainer />
+        <QueryClientProvider>
+          <Provider>
+            <main className="flex h-screen flex-col">{children}</main>
+          </Provider>
+        </QueryClientProvider>
       </body>
     </html>
   );
