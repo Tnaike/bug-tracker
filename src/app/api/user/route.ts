@@ -17,6 +17,10 @@ export async function POST(req: Request) {
       return NextResponse.json({ user: null, message: 'An account with this email already exists' }, { status: 409 });
     }
 
+    if (password.length < 6) {
+      return NextResponse.json({ message: 'Password should be at least 6 characters long' }, { status: 400 });
+    }
+
     const hashedPassword = await hash(password, 10);
     const newUser = await db.user.create({
       data: { email, name, password: hashedPassword, image },
