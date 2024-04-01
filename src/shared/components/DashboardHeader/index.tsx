@@ -1,13 +1,8 @@
 'use Client';
 
 import Image from 'next/image';
-import React from 'react';
 
-interface DashboardHeaderProps {
-  children?: React.ReactNode;
-}
-
-const DashboardHeader = ({ children }: DashboardHeaderProps) => {
+const DashboardHeader = () => {
   return (
     <div className="flex bg-white">
       <div className="flex items-center justify-between px-4 py-2 md:px-6 md:py-4 grow gap-2">
@@ -42,7 +37,6 @@ const DashboardHeader = ({ children }: DashboardHeaderProps) => {
           </button>
         </div>
       </div>
-      {children}
     </div>
   );
 };
