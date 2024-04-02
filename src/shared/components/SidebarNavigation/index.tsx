@@ -1,3 +1,6 @@
+import ROUTE from '@/app/routes';
+import Navigation from '@/shared/components/Navigation';
+import NavigationItem from '@/shared/components/Navigation/NavigationItem';
 import Image from 'next/image';
 
 const SidebarNavigation = () => {
@@ -13,7 +16,22 @@ const SidebarNavigation = () => {
           priority
         />
       </div>
-      <div className="h-screen mt-16 pt-10 pb-20 no-scrollbar overflow-y-auto"> </div>
+      <div className="h-screen mt-16 pt-10 pb-20 no-scrollbar overflow-y-auto">
+        <Navigation>
+          <NavigationItem href={ROUTE.dashboard}>
+            <Image src="/images/dashboard-icon.svg" alt="Dashboard icon" width={24} height={24} priority />
+            <p className="text-base font-medium">Dashboard</p>
+          </NavigationItem>
+          <NavigationItem href={ROUTE.profile}>
+            <Image src="/images/user-icon.svg" alt="Profile icon" width={24} height={24} priority />
+            <p className="text-base font-medium">Profile</p>
+          </NavigationItem>
+          <NavigationItem href={ROUTE.tasks}>
+            <Image src="/images/task-list.svg" alt="Task icon" width={24} height={24} priority />
+            <p className="text-base font-medium">Task</p>
+          </NavigationItem>
+        </Navigation>
+      </div>
     </div>
   );
 };
