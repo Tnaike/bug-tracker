@@ -6,7 +6,10 @@ const DashboardHeader = () => {
   return (
     <div className="flex bg-white">
       <div className="flex items-center justify-between px-4 py-2 md:px-6 md:py-4 grow gap-2">
-        <h2 className="text-2xl font-semibold">Dashboard</h2>
+        <h2 className="text-2xl font-semibold max-md:hidden">Dashboard</h2>
+        <button type="button" className="md:hidden">
+          <Image src="/images/hambuger.svg" width={25} height={25} alt="Menu" priority />
+        </button>
         <div className="flex items-center gap-1.5">
           <button type="button" className="flex items-center justify-center size-9 rounded-full hover:bg-sky-100">
             <Image src="/images/dashboard-settings.svg" width={20} height={20} alt="settings-icon" priority />
@@ -30,7 +33,7 @@ const DashboardHeader = () => {
               alt="user-avatar"
               priority
             />
-            <div className="flex flex-col items-start grow text-xs text-gray-600 font-semibold leading-none truncate">
+            <div className="flex flex-col items-start grow text-xs text-gray-600 font-semibold leading-none truncate max-md:hidden">
               <span>Tommy Naike</span>
               <span className="text-xxs text-gray-600 font-normal">Bug Manager</span>
             </div>
