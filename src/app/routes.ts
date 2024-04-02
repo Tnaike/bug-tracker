@@ -8,7 +8,10 @@ const ROUTE = {
   pricing: '/pricing',
   admin: {
     dashboard: '/admin',
-  }
+  },
+  dashboard: '/dashboard',
+  profile: '/profile',
+  tasks: '/tasks',
 };
 
 export default ROUTE;
