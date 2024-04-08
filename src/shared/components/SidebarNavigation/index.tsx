@@ -4,9 +4,15 @@ import NavigationItem from '@/shared/components/Navigation/NavigationItem';
 import Image from 'next/image';
 import Button from '../Button';
 
-const SidebarNavigation = () => {
+interface SidebarNavigationProps {
+  isOpen: boolean;
+}
+
+const SidebarNavigation = ({ isOpen }: SidebarNavigationProps) => {
   return (
-    <div className="fixed left-0 top-0 h-screen w-[250px] bg-[#0c183d] border-r border-r-blue-950 md:rounded-tr-3xl z-20">
+    <div
+      className={`fixed left-0 top-0 h-screen w-[250px] bg-[#0c183d] border-r border-r-blue-950 md:rounded-tr-3xl z-20 ${isOpen ? 'translate-x-0' : 'max-md:-translate-x-full'}`}
+    >
       <div className="fixed flex w-[inherit] items-center p-3 px-6 border-b border-b-[#02040b]">
         <Image
           className="object-fit max-md:w-32"
@@ -33,7 +39,7 @@ const SidebarNavigation = () => {
           </NavigationItem>
           <NavigationItem href={ROUTE.tasks}>
             <Image src="/images/report-icon.svg" alt="Report icon" width={24} height={24} priority />
-            <p className="text-base font-medium">Report</p>
+            <p className="text-base font-medium">Bug Report</p>
           </NavigationItem>
           <NavigationItem asButton>
             <Image src="/images/sign-out-icon.svg" alt="Sign-out icon" width={24} height={24} priority />
