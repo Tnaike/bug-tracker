@@ -1,15 +1,21 @@
 'use Client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 
 const DashboardHeader = () => {
+  const [showSidebar, setShowSidebar] = useState(false);
+
   return (
     <div className="flex bg-white">
-      <div className="flex items-center justify-between px-4 py-2 md:px-6 md:py-4 grow gap-2">
+      <div className="flex items-center justify-between px-4 py-3 md:px-6 md:py-4 grow gap-2">
         <h2 className="text-2xl font-semibold max-md:hidden">Dashboard</h2>
-        <button type="button" className="md:hidden">
-          <Image src="/images/hambuger.svg" width={25} height={25} alt="Menu" priority />
-        </button>
+        <div className="flex items-center md:!hidden space-x-3">
+          <Image src="/images/bug-tracker-icon.svg" width={25} height={25} alt="Menu" priority />
+          <button type="button">
+            <Image src="/images/hambuger.svg" width={25} height={25} alt="Menu" priority />
+          </button>
+        </div>
         <div className="flex items-center gap-1.5">
           <button type="button" className="flex items-center justify-center size-9 rounded-full hover:bg-sky-100">
             <Image src="/images/dashboard-settings.svg" width={20} height={20} alt="settings-icon" priority />
