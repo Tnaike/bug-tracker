@@ -11,7 +11,7 @@ interface SidebarNavigationProps {
 const SidebarNavigation = ({ isOpen }: SidebarNavigationProps) => {
   return (
     <div
-      className={`fixed left-0 top-0 h-screen w-[250px] bg-[#0c183d] border-r border-r-blue-950 md:rounded-tr-3xl z-20 ${isOpen ? 'translate-x-0' : 'max-md:-translate-x-full'}`}
+      className={`fixed left-0 top-0 h-screen w-[250px] bg-[#0c183d] border-r border-r-blue-950 md:rounded-tr-3xl z-20 duration-200 ${isOpen ? 'translate-x-0' : 'max-md:-translate-x-full'}`}
     >
       <div className="fixed flex w-[inherit] items-center p-3 px-6 border-b border-b-[#02040b]">
         <Image

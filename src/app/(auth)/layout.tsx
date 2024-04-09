@@ -18,11 +18,14 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       {sidebarOpen && (
-        <div className="fixed top-0 left-0 w-screen h-screen bg-black opacity-40 z-[11]" onClick={closeSidebar}></div>
+        <div
+          className="fixed top-0 left-0 w-screen h-screen bg-black opacity-50 z-[11] duration-200"
+          onClick={closeSidebar}
+        ></div>
       )}
       <SidebarNavigation isOpen={sidebarOpen} />
       <div
-        className={`fixed max-md:w-full top-0 md:ml-[250px] md:w-[calc(100%-250px)] transform transition-transform duration-300 max-w-[100vw] shadow-[0px_4px_40px_0px_rgba(0,0,0,0.07)] z-10 ${sidebarOpen ? 'max-md:ml-0' : ''}`}
+        className={`fixed max-md:w-full top-0 md:ml-[250px] md:w-[calc(100%-250px)] max-w-[100vw] shadow-[0px_4px_40px_0px_rgba(0,0,0,0.07)] z-10 ${sidebarOpen ? 'max-md:ml-0' : ''}`}
       >
         <DashboardHeader onToggleSidebar={toggleSidebar} />
       </div>
