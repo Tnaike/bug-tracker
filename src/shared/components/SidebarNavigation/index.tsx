@@ -2,7 +2,7 @@ import ROUTE from '@/app/routes';
 import Navigation from '@/shared/components/Navigation';
 import NavigationItem from '@/shared/components/Navigation/NavigationItem';
 import Image from 'next/image';
-import Button from '../Button';
+import Button from '@/shared/components/Button';
 
 interface SidebarNavigationProps {
   isOpen: boolean;
@@ -38,12 +38,16 @@ const SidebarNavigation = ({ isOpen }: SidebarNavigationProps) => {
             <p className="text-base font-medium">Task</p>
           </NavigationItem>
           <NavigationItem href={ROUTE.tasks}>
-            <Image src="/images/report-icon.svg" alt="Report icon" width={24} height={24} priority />
+            <Image src="/images/bug-icon.svg" alt="Report icon" width={24} height={24} priority />
             <p className="text-base font-medium">Bug Report</p>
           </NavigationItem>
+          <NavigationItem href={ROUTE.tasks}>
+            <Image src="/images/settings-icon.svg" alt="Report icon" width={24} height={24} priority />
+            <p className="text-base font-medium">Settings</p>
+          </NavigationItem>
           <NavigationItem asButton>
-            <Image src="/images/sign-out-icon.svg" alt="Sign-out icon" width={24} height={24} priority />
-            <p className="text-base font-medium">Sign-Out</p>
+            <Image src="/images/logout-icon.svg" alt="Sign-out icon" width={24} height={24} priority />
+            <p className="text-base font-medium">Log Out</p>
           </NavigationItem>
           <div className="mx-6 mb-5 mt-16 md:mt-14 rounded-2xl bg-blue-700 p-6 space-y-3 text-white">
             <p className="text-base font-bold text-center">BugTracker Pro</p>
