@@ -7,6 +7,9 @@ interface DashboardHeaderProps {
 }
 
 const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
+  const userAvatarSrc = '/images/user-avatar.svg';
+  const fallBackImage = '/images/avatar.svg';
+
   return (
     <div className="flex bg-white">
       <div className="flex items-center justify-between px-4 py-2.5 md:px-6 md:py-4 grow gap-2">
@@ -42,10 +45,14 @@ const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
           <button type="button" className="flex items-center space-x-2 max-w-44 ml-3">
             <Image
               className="rounded-full object-cover"
-              src="/images/user-avatar.svg"
+              src={userAvatarSrc}
               width={34}
               height={34}
               alt="user-avatar"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = fallBackImage;
+              }}
               priority
             />
             <div className="flex flex-col items-start grow text-xs text-gray-600 font-semibold leading-none truncate max-md:hidden">
