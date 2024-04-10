@@ -2,7 +2,7 @@ import ROUTE from '@/app/routes';
 import Navigation from '@/shared/components/Navigation';
 import NavigationItem from '@/shared/components/Navigation/NavigationItem';
 import Image from 'next/image';
-import Button from '../Button';
+import Button from '@/shared/components/Button';
 
 interface SidebarNavigationProps {
   isOpen: boolean;
