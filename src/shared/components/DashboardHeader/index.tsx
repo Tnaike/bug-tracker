@@ -1,13 +1,14 @@
 'use Client';
 
+import getFallbackImage from '@/utils/getFallbackImage';
 import Image from 'next/image';
+import userAvatar from '/public/images/user-avatar.svg';
 
 interface DashboardHeaderProps {
   onToggleSidebar: () => void;
 }
 
 const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
-  const userAvatarSrc = '/images/user-avatar.svg';
   const fallBackImage = '/images/avatar.svg';
 
   return (
@@ -45,7 +46,7 @@ const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
           <button type="button" className="flex items-center space-x-2 max-w-44 ml-3">
             <Image
               className="rounded-full object-cover"
-              src={userAvatarSrc}
+              src={getFallbackImage(userAvatar, fallBackImage)}
               width={34}
               height={34}
               alt="user-avatar"
