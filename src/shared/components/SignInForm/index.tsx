@@ -39,7 +39,7 @@ const SignInForm = () => {
       toast.error('Something went wrong. Please try again', { theme: 'colored' });
     } else {
       router.refresh();
-      router.push(ROUTE.admin.dashboard);
+      router.push(ROUTE.dashboard);
     }
   };
 

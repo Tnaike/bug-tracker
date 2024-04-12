@@ -44,18 +44,20 @@ const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
             </span>
           </button>
           <button type="button" className="flex items-center space-x-2 max-w-44 ml-3">
-            <Image
-              className="rounded-full object-cover"
-              src={getFallbackImage(userAvatar, fallBackImage)}
-              width={34}
-              height={34}
-              alt="user-avatar"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = fallBackImage;
-              }}
-              priority
-            />
+            <div className="flex size-[34px] rounded-full bg-slate-100">
+              <Image
+                className="rounded-full object-cover"
+                src={getFallbackImage(userAvatar, fallBackImage)}
+                width={34}
+                height={34}
+                alt="user-avatar"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = fallBackImage;
+                }}
+                priority
+              />
+            </div>
             <div className="flex flex-col items-start grow text-xs text-gray-600 font-semibold leading-none truncate max-md:hidden">
               <span>Tommy Naike</span>
               <span className="text-xxs text-gray-600 font-normal">Bug Manager</span>
