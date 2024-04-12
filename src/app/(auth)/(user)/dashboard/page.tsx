@@ -3,7 +3,7 @@ import DashboardCardItem from '@/shared/components/DashboardCard/DashboardCardIt
 import Image from 'next/image';
 import addIcon from '/public/images/add-icon.svg';
 import closedIcon from '/public/images/closed-issue.svg';
-import progressIcon from '/public/images/in-progress-tag.svg';
+import progressIcon from '/public/images/progress-check.svg';
 import newIcon from '/public/images/new-issue.svg';
 import tagIcon from '/public/images/tag-icon.svg';
 
@@ -24,7 +24,7 @@ const DashboardPage = async () => {
           svgIcon={<Image src={addIcon} width={12} height={12} alt="bell-icon" priority className="mr-1.5" />}
         />
       </div>
-      <div className="grid gap-4 md:gap-6 sm:grid-cols-2 md:grid-cols-4 mt-8">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mt-8">
         <DashboardCardItem iconSrc={tagIcon} color="bg-blue-200" title="Total Issues" value="30" alt="Total Issue" />
         <DashboardCardItem iconSrc={newIcon} color="bg-[#26bf94]" title="New Issues" value="10" alt="New Issue" />
         <DashboardCardItem

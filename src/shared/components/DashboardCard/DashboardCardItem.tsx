@@ -12,7 +12,7 @@ interface DashboardCardProps {
 export default function DashboardCardItem({ color, title, value, alt, iconSrc }: DashboardCardProps) {
   return (
     <DashboardCard>
-      <div className="flex items-start justify-between py-2">
+      <div className="flex items-center justify-between py-2">
         <div className={`flex items-center justify-center size-12 rounded-full ${color}`}>
           <Image src={iconSrc} width={28} height={28} alt={alt} />
         </div>

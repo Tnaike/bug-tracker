@@ -1,14 +1,21 @@
 import ROUTE from '@/app/routes';
+import Button from '@/shared/components/Button';
 import Navigation from '@/shared/components/Navigation';
 import NavigationItem from '@/shared/components/Navigation/NavigationItem';
 import Image from 'next/image';
-import Button from '@/shared/components/Button';
+import { useRouter } from 'next/navigation';
 
 interface SidebarNavigationProps {
   isOpen: boolean;
 }
 
 const SidebarNavigation = ({ isOpen }: SidebarNavigationProps) => {
+  const router = useRouter();
+
+  const handleLogout = () => {
+    router.push(ROUTE.signIn);
+  };
+
   return (
     <div
       className={`fixed left-0 top-0 h-screen w-[250px] bg-[#0c183d] border-r border-r-blue-950 md:rounded-tr-3xl z-20 duration-200 ${isOpen ? 'translate-x-0' : 'max-md:-translate-x-full'}`}
@@ -30,7 +37,7 @@ const SidebarNavigation = ({ isOpen }: SidebarNavigationProps) => {
             <p className="text-base font-medium">Dashboard</p>
           </NavigationItem>
           <NavigationItem href={ROUTE.profile}>
-            <Image src="/images/profile-icon.svg" alt="Profile icon" width={24} height={24} priority />
+            <Image src="/images/user-profile.svg" alt="Profile icon" width={24} height={24} priority />
             <p className="text-base font-medium">Profile</p>
           </NavigationItem>
           <NavigationItem href={ROUTE.tasks}>
@@ -45,7 +52,7 @@ const SidebarNavigation = ({ isOpen }: SidebarNavigationProps) => {
             <Image src="/images/settings-icon.svg" alt="Report icon" width={24} height={24} priority />
             <p className="text-base font-medium">Settings</p>
           </NavigationItem>
-          <NavigationItem asButton>
+          <NavigationItem asButton onClick={handleLogout}>
             <Image src="/images/logout-icon.svg" alt="Sign-out icon" width={24} height={24} priority />
             <p className="text-base font-medium">Log Out</p>
           </NavigationItem>
