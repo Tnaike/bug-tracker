@@ -3,15 +3,19 @@
 import ROUTE from '@/app/routes';
 import { SignUpUserInput, SignUpUserSchema } from '@/lib/validations/auth.schema';
 import Button from '@/shared/components/Button';
+import FormErrorMessage from '@/shared/components/FormErrorMessage';
 import FormField from '@/shared/components/FormField';
 import PasswordInput from '@/shared/components/PasswordInput';
 import TextInput from '@/shared/components/TextInput';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const SignUpForm = () => {
+  const [errorMessage, setErrorMessage] = useState('');
+
   const router = useRouter();
   const {
     register,
@@ -22,20 +26,26 @@ const SignUpForm = () => {
   });
 
   const handleFormSignUp = async (data: SignUpUserInput) => {
-    const response = await fetch('/api/user', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: data.email,
-        name: `${data.firstName} ${data.lastName}`,
-        password: data.password,
-      }),
-    });
+    try {
+      const response = await fetch('/api/user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: data.email,
+          name: `${data.firstName} ${data.lastName}`,
+          password: data.password,
+        }),
+      });
 
-    if (response.status === 201) {
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        throw new Error(responseData.message);
+      }
+
       router.push(ROUTE.signIn);
-    } else {
-      console.error('Registration failed');
+    } catch (error: any) {
+      setErrorMessage(error.message);
     }
   };
 
@@ -66,10 +76,10 @@ const SignUpForm = () => {
             Terms of Service
           </Link>
         </p>
-        {/* <div className="cursor-pointer text-blue-300 ml-1">
-          <Button label="Terms of Service" size="text" variant="basic" />
-        </div> */}
       </div>
+      {errorMessage && (
+        <FormErrorMessage className="flex justify-center text-sm mt-1 mb-3">{errorMessage}</FormErrorMessage>
+      )}
       <div className="mb-6 flex items-center justify-center">
         <Button type="submit" size="medium" className="w-full" label="Create account" />
       </div>

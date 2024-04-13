@@ -6,7 +6,7 @@ interface FormErrorMessageProps {
 }
 
 function FormErrorMessage({ children, className }: FormErrorMessageProps) {
-  return <div className={cn('text-xs italic text-error', className)}>{children}</div>;
+  return <div className={cn('text-xs text-error', className)}>{children}</div>;
 }
 
 export default FormErrorMessage;
