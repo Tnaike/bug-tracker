@@ -77,9 +77,7 @@ const SignUpForm = () => {
           </Link>
         </p>
       </div>
-      {errorMessage && (
-        <FormErrorMessage className="flex justify-center text-sm mt-1 mb-3">{errorMessage}</FormErrorMessage>
-      )}
+      {errorMessage && <FormErrorMessage className="flex justify-center text-sm mb-3">{errorMessage}</FormErrorMessage>}
       <div className="mb-6 flex items-center justify-center">
         <Button type="submit" size="medium" className="w-full" label="Create account" />
       </div>
