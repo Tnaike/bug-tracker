@@ -29,13 +29,13 @@ export const authOptions: NextAuthOptions = {
           where: { email: credentials?.email },
         });
         if (!existingUser) {
-          return null;
+          throw new Error('Email or password is incorrect');
         }
 
         const passwordMatch = await compare(credentials?.password, existingUser.password);
 
         if (!passwordMatch) {
-          return null;
+          throw new Error('Email or password is incorrect');
         }
 
         return {
