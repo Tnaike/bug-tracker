@@ -17,6 +17,7 @@ import { useForm } from 'react-hook-form';
 const SignInForm = () => {
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -31,14 +32,18 @@ const SignInForm = () => {
   });
 
   const handleFormSubmit = async (data: SignInUserInput) => {
+    setIsLoading(true);
+
     const signInData = await signIn('credentials', {
       email: data.email,
       password: data.password,
       redirect: false,
     });
 
-    if (signInData?.error) {
-      setErrorMessage(signInData.error);
+    setIsLoading(false);
+
+    if (!signInData?.ok) {
+      setErrorMessage(signInData?.error || 'Invalid credentials');
     } else {
       router.refresh();
       router.push(ROUTE.dashboard);
@@ -67,7 +72,7 @@ const SignInForm = () => {
           <FormErrorMessage className="flex justify-center text-sm mb-3">{errorMessage}</FormErrorMessage>
         )}
         <div className="mb-6 flex items-center justify-center">
-          <Button type="submit" size="medium" className="w-full" label="Proceed to Dashboard" />
+          <Button type="submit" size="medium" className="w-full" label="Proceed to Dashboard" isLoading={isLoading} />
         </div>
       </form>
     </>
