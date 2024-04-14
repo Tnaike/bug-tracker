@@ -37,10 +37,12 @@ export const authOptions: NextAuthOptions = {
           throw new Error('Email or password is incorrect');
         }
 
-        const passwordMatch = await compare(credentials?.password, existingUser.password);
+        if (existingUser.password) {
+          const passwordMatch = await compare(credentials?.password, existingUser.password);
 
-        if (!passwordMatch) {
-          throw new Error('Email or password is incorrect');
+          if (!passwordMatch) {
+            throw new Error('Email or password is incorrect');
+          }
         }
 
         return {
