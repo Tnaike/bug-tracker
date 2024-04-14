@@ -43,7 +43,7 @@ const SignInForm = () => {
     setIsLoading(false);
 
     if (!signInData?.ok) {
-      setErrorMessage(signInData?.error || 'Invalid credentials');
+      setErrorMessage(signInData?.error ?? 'Invalid credentials');
     } else {
       router.refresh();
       router.push(ROUTE.dashboard);
