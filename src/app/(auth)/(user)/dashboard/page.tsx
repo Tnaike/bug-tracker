@@ -1,18 +1,22 @@
+import { authOptions } from '@/lib/auth';
 import Button from '@/shared/components/Button';
 import DashboardCardItem from '@/shared/components/DashboardCard/DashboardCardItem';
+import { getServerSession } from 'next-auth';
 import Image from 'next/image';
 import addIcon from '/public/images/add-icon.svg';
 import closedIcon from '/public/images/closed-issue.svg';
-import progressIcon from '/public/images/progress-check.svg';
 import newIcon from '/public/images/new-issue.svg';
+import progressIcon from '/public/images/progress-check.svg';
 import tagIcon from '/public/images/tag-icon.svg';
 
 const DashboardPage = async () => {
+  const session = await getServerSession(authOptions);
+
   return (
     <>
       <div className="flex max-sm:flex-col sm:items-center sm:justify-between pt-4 gap-2">
         <div className="flex flex-col">
-          <h2 className="text-md font-semibold">Welcome, Tommy 🎉</h2>
+          <h2 className="text-md font-semibold">Welcome, {session?.user?.name.split(' ')[0]} 🎉</h2>
           <p className="flex text-xs text-slate-600">Manage your bugs, track progress, and collaborate.</p>
         </div>
         <Button
@@ -20,7 +24,7 @@ const DashboardPage = async () => {
           label="New Issue"
           variant="primary"
           size="small"
-          className='max-sm:w-full'
+          className="max-sm:w-full"
           svgIcon={<Image src={addIcon} width={12} height={12} alt="bell-icon" priority className="mr-1.5" />}
         />
       </div>

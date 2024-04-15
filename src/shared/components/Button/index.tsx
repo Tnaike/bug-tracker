@@ -1,30 +1,22 @@
 'use client';
 
-import React from 'react';
-import './Button.css';
-import Link from 'next/link';
 import Spinner from '@/shared/components/Spinner';
 import { cn } from '@/utils/utilHelper';
+import Link from 'next/link';
+import React from 'react';
+import './Button.css';
 
 interface ButtonProps {
   label?: string;
   type?: 'button' | 'submit' | 'reset';
-  variant?:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'danger'
-    | 'warning'
-    | 'info'
-    | 'transparent'
-    | 'basic';
+  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'transparent' | 'basic';
   size?: 'default' | 'small' | 'medium' | 'large' | 'text';
   height?: string;
   disabled?: boolean;
   isLoading?: boolean;
   loadingIcon?: React.ReactElement;
   svgIcon?: React.ReactElement;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: () => void;
   href?: string;
   className?: string;
 }
@@ -39,19 +31,13 @@ const Button: React.FC<ButtonProps> = ({
   isLoading = false,
   loadingIcon = <Spinner />,
   svgIcon,
-  onClick = () => {},
+  onClick,
   href,
   className,
 }) => {
   if (href) {
     return (
-      <Link
-        href={href}
-        className={cn(
-          `button btn-${variant} btn-${size} h-${height}`,
-          className
-        )}
-      >
+      <Link href={href} className={cn(`button btn-${variant} btn-${size} h-${height}`, className)}>
         {label}
       </Link>
     );
