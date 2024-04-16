@@ -15,6 +15,7 @@ import { useForm } from 'react-hook-form';
 
 const SignUpForm = () => {
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
   const {
@@ -26,6 +27,8 @@ const SignUpForm = () => {
   });
 
   const handleFormSignUp = async (data: SignUpUserInput) => {
+    setIsLoading(true);
+
     try {
       const response = await fetch('/api/user', {
         method: 'POST',
@@ -37,6 +40,7 @@ const SignUpForm = () => {
         }),
       });
 
+      setIsLoading(false);
       const responseData = await response.json();
 
       if (!response.ok) {
@@ -79,7 +83,7 @@ const SignUpForm = () => {
       </div>
       {errorMessage && <FormErrorMessage className="flex justify-center text-sm mb-3">{errorMessage}</FormErrorMessage>}
       <div className="mb-6 flex items-center justify-center">
-        <Button type="submit" size="medium" className="w-full" label="Create account" />
+        <Button type="submit" size="medium" className="w-full" label="Create account" isLoading={isLoading} />
       </div>
     </form>
   );
